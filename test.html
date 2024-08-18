@@ -1,0 +1,47 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Two-column Section -->
+<section class="content-section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Column: Speech To Sign -->
+      <div class="col-md-6">
+        <div class="title-single-box">
+          <h1 class="title-single">Speech To Sign</h1><br>
+          <button class="btn btn-success"><a href="speech_sign" style="color: white;">Record</a></button>
+        </div>
+      </div>
+
+      <!-- Right Column: Speech Emotion -->
+      <div class="col-md-6">
+        <div class="title-single-box">
+          <h1 class="title-single">Speech Emotion</h1><br>
+          <a class="btn btn-success" href="http://127.0.0.1:8000/livevoice">Record</a><br><br>
+          {% if emtn %}
+            <h1 class="title-single">Result</h1><br><br>
+            <h2>{{ emtn }}</h2>
+            <img src="{% static 'img/' %}{{ emtn }}.jpeg" alt="Emotion Image">
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}
